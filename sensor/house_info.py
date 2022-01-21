@@ -1,23 +1,23 @@
-import date
 from datetime import date
 
+class HouseInfo(object):
+    def __init__(self,data):
+        self.data = data
 
-class HouseInfo(self,data):
-    def get_data_by_area(self,field,rec_area):
-        rec_area = 0
+    def get_data_by_area(self,field,rec_area=0):
         field_data = []
         for record in self.data:
             if rec_area == 0:
-                record[field] = field_data.append
-            else:
-                rec_area = int(record['area'])
+                field_data.append(record[field])
+            elif rec_area == int(record['area']):
+                field_data.append(record[field])
         return field_data
     
-    def get_data_by_date(self,field,rec_date):
+    def get_data_by_date(self,field,rec_date=date.today()):
         field_data = []
         for record in self.data:
-            if date == rec_date:
-                record[field] = field_data.append
+            if rec_date.strftime("%m/%d/%y") == record['date']:
+                field_data.append(record[field])
         return field_data
 
     
